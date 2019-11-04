@@ -85,3 +85,14 @@ const textP = document.querySelector(".inverse-content .text-content h2");
 textP.addEventListener("click", () => {
     event.target.style.color = "rebeccapurple";
 });
+
+
+// PREVENT DEFAULT 
+const stopLink = document.querySelectorAll('.nav-link');
+
+stopLink.forEach(item => {
+    item.addEventListener('click', () => {
+        console.log('menu item click');
+        event.preventDefault();
+    });
+});
