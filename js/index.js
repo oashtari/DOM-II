@@ -1,6 +1,6 @@
 // Your code goes here
 const mainNav = document.querySelector('.main-navigation');
-mainNav.addEventListener('mouseover', () => {
+mainNav.addEventListener('click', () => {
     event.target.style.backgroundColor = 'blue';
     event.target.style.border = '3px solid orange';
 })
@@ -31,11 +31,18 @@ firstContent.addEventListener('dblclick', () => {
 
 const funPlace = document.querySelector('.content-destination img');
 
-funPlace.addEventListener('dblclick', () => {
-    event.target.style.src = 'https://files.brightside.me/files/news/part_14/140405/1332905-Queimada-Grande02-1000-2de279b24a-1484648003.jpg';
+funPlace.addEventListener('mouseover', () => {
+    funPlace.src = 'https://files.brightside.me/files/news/part_14/140405/1332905-Queimada-Grande02-1000-2de279b24a-1484648003.jpg';
 })
 
 
-// function changeText() {
-//     log.textContent = log.textContent + `!!!!!!!`;
-// }
+const button = document.querySelectorAll('.btn');
+
+function hideous() {
+    event.target.style.backgroundColor = 'black';
+    event.target.style.color = 'orange';
+}
+
+button.forEach(item => {
+    item.addEventListener('mouseout', hideous);
+});
